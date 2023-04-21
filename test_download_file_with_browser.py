@@ -14,12 +14,7 @@ prefs = {
 }
 options.add_experimental_option("prefs", prefs)
 
-driver = webdriver.Chrome(
-    service=Service(ChromeDriverManager().install()),
-    options=options
-)
-
-browser.config.driver = driver
+browser.config.driver_options = options
 
 browser.open("https://github.com/pytest-dev/pytest")
 browser.element(".d-none .Button-label").click()
